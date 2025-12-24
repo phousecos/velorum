@@ -1,0 +1,482 @@
+/* ==================== */
+/* CSS Variables */
+/* ==================== */
+:root {
+    /* Colors */
+    --velorum-blue: #0020C2;
+    --velorum-deep: #001A99;
+    --velorum-bright: #0029FF;
+    --charcoal: #1A1A1A;
+    --slate: #64748B;
+    --light-gray: #F8FAFC;
+    --white: #FFFFFF;
+    --border-gray: #E2E8F0;
+    
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Spacing */
+    --container-max: 1200px;
+    --section-padding: 6rem 2rem;
+}
+
+/* ==================== */
+/* Reset & Base Styles */
+/* ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--charcoal);
+    line-height: 1.6;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==================== */
+/* Container */
+/* ==================== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==================== */
+/* Header */
+/* ==================== */
+.header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-gray);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--velorum-blue);
+}
+
+.logo-subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--slate);
+    letter-spacing: 0.05em;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--slate);
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--velorum-blue);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--velorum-blue);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ==================== */
+/* Hero Section */
+/* ==================== */
+.hero {
+    background: linear-gradient(135deg, var(--velorum-deep) 0%, var(--velorum-blue) 100%);
+    color: var(--white);
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--velorum-blue);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--light-gray);
+}
+
+/* ==================== */
+/* Products Section */
+/* ==================== */
+.products {
+    padding: var(--section-padding);
+    background-color: var(--light-gray);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-gray);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 32, 194, 0.1);
+    border-color: var(--velorum-blue);
+}
+
+.product-logo {
+    height: 60px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.product-logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+    background-color: rgba(0, 32, 194, 0.08);
+    color: var(--velorum-blue);
+    padding: 0.375rem 0.875rem;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.product-link {
+    color: var(--velorum-blue);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    display: inline-flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-link:hover {
+    color: var(--velorum-bright);
+}
+
+.product-link.coming-soon {
+    color: var(--slate);
+    cursor: default;
+    font-style: italic;
+}
+
+/* ==================== */
+/* About Section */
+/* ==================== */
+.about {
+    padding: var(--section-padding);
+    background-color: var(--white);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--slate);
+    margin-bottom: 1.5rem;
+}
+
+/* ==================== */
+/* Contact Section */
+/* ==================== */
+.contact {
+    padding: var(--section-padding);
+    background-color: var(--light-gray);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info h3,
+.contact-careers h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+    color: var(--slate);
+}
+
+.contact-item strong {
+    color: var(--charcoal);
+    font-weight: 600;
+}
+
+.contact-item a,
+.contact-careers p {
+    color: var(--slate);
+}
+
+.contact-item a:hover {
+    color: var(--velorum-blue);
+}
+
+.careers-link {
+    display: inline-block;
+    color: var(--velorum-blue);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.careers-link:hover {
+    color: var(--velorum-bright);
+}
+
+/* ==================== */
+/* Footer */
+/* ==================== */
+.footer {
+    background-color: var(--charcoal);
+    color: var(--white);
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo .logo-text {
+    color: var(--white);
+}
+
+.footer-logo .logo-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}
+
+/* ==================== */
+/* Responsive Design */
+/* ==================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero {
+        padding: 5rem 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .nav {
+        gap: 1.25rem;
+    }
+    
+    .nav a {
+        font-size: 0.875rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .product-card {
+        padding: 2rem;
+    }
+}
